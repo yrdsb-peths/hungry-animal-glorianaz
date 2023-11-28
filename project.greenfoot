@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.Apple.image=apple.png
 class.Elephant.image=elephant.png
-class.MyWorld.image=background.jpg
+class.MyWorld.image=ezgif.com-webp-to-jpg.jpg
 dependency1.from=MyWorld
 dependency1.to=Label
 dependency1.type=UsesDependency
@@ -72,5 +72,5 @@ target4.y=0
 version=3.1.0
 width=830
 world.lastInstantiated=MyWorld
-xPosition=464
-yPosition=220
+xPosition=412
+yPosition=31
