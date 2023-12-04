@@ -29,7 +29,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
         
-        createApple();
+        createStrawberry();
     }
     
     /**
@@ -51,13 +51,13 @@ public class MyWorld extends World
     }
     
     /**
-     * Create a new apple at a random location at the top of the world
+     * Create a new Strawberry at a random location at the top of the world
      */
-    public void createApple()
+    public void createStrawberry()
     {
-        Apple apple = new Apple();
+        Strawberry strawberry = new Strawberry();
         int x = Greenfoot.getRandomNumber(600); 
         int y = 0;
-        addObject(apple, x, y);
+        addObject(strawberry, x, y);
     }
 }

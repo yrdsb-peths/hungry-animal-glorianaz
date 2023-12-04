@@ -77,7 +77,7 @@ public class Elephant extends Actor
             facing = "right";
         }
         
-        // Remove apple if elephant eats it 
+        // Remove strawberry if elephant eats it 
         eat();
         
         // Animate the elephant
@@ -87,15 +87,15 @@ public class Elephant extends Actor
     
     
     /**
-     * Eats the apple and spawns a new apple if an apple is eaten
+     * Eats the strawberry and spawns a new strawberry if a strawberry is eaten
      */
     public void eat()
     {
-        if(isTouching(Apple.class))
+        if(isTouching(Strawberry.class))
         {
-            removeTouching(Apple.class);
+            removeTouching(Strawberry.class);
             MyWorld world = (MyWorld) getWorld();
-            world.createApple();
+            world.createStrawberry();
             world.increaseScore();
             elephantSound.play();
         }
