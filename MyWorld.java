@@ -15,15 +15,15 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+     // Create the elephant object
+    Elephant elephant = new Elephant();
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
-
-        
-        // Create the elephant object
-        Elephant elephant = new Elephant();
         addObject(elephant, 300, 300);
         
         // Create a label
@@ -31,15 +31,18 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         createStrawberry();
+        createBomb();
     }
     
     /**
      * End the game and draw 'GameOver'
      */
+    GreenfootSound gameOverSound = new GreenfootSound("womp-womp.mp3");
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        gameOverSound.play();
     }
     
     /**
@@ -66,5 +69,14 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600); 
         int y = 0;
         addObject(strawberry, x, y);
+    }
+    
+    public void createBomb()
+    {
+        Bomb bomb = new Bomb();
+        bomb.setSpeed(level - 1);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = -1;
+        addObject(bomb, x, y);
     }
 }
