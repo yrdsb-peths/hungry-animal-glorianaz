@@ -22,7 +22,6 @@ public class Bomb extends Actor
         int y = getY() + bombSpeed;
         setLocation(x, y);
         
-        
     }  
     
     public void setSpeed(int bombSpd)
