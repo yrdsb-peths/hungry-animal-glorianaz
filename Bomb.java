@@ -22,6 +22,18 @@ public class Bomb extends Actor
         int y = getY() + bombSpeed;
         setLocation(x, y);
         
+        MyWorld world = (MyWorld) getWorld();
+        if(getY() >= world.getHeight())
+        {
+            world.removeObject(this);
+            
+            if(world.score == 0)
+            {
+                world.gameOver();
+            }
+            world.createBomb();
+        }
+        
     }  
     
     public void setSpeed(int bombSpd)

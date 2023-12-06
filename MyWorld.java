@@ -30,6 +30,11 @@ public class MyWorld extends World
         
         createStrawberry();
         createBomb();
+        
+        if(score == -1)
+        {
+            gameOver();
+        }
     }
    
 
@@ -85,6 +90,21 @@ public class MyWorld extends World
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(bomb, x, y);
+    }
+    
+    
+    SimpleTimer bombTimer = new SimpleTimer();
+    boolean gameIsOver = false;
+    public void act()
+    {
+        if(!gameIsOver)
+        {
+            if(bombTimer.millisElapsed() > 20000)
+            {
+                bombTimer.mark();
+                createBomb();
+            }
+        }
     }
     
 }

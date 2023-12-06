@@ -27,6 +27,7 @@ public class Strawberry extends Actor
         {
             world.gameOver();
             world.removeObject(this);
+            
         }
 
     }
