@@ -29,8 +29,10 @@ public class MyWorld extends World
         addObject(scoreLabel, 50, 50);
         
         createStrawberry();
+        createBomb();
     }
-    
+   
+
     /**
      * End the game and draw 'GameOver'
      */
@@ -39,6 +41,7 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel, 300, 200);
+        
         gameOverSound.play();
     }
     
@@ -56,6 +59,13 @@ public class MyWorld extends World
         }
     }
     
+    public void decreaseScore()
+    {
+        score--;
+        scoreLabel.setValue(score);
+
+    }
+    
     /**
      * Create a new Strawberry at a random location at the top of the world
      */
@@ -67,4 +77,14 @@ public class MyWorld extends World
         int y = 0;
         addObject(strawberry, x, y);
     }
+    
+    public void createBomb()
+    {
+        Bomb bomb = new Bomb();
+        bomb.setSpeed(level);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(bomb, x, y);
+    }
+    
 }

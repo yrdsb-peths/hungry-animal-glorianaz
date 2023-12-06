@@ -68,12 +68,12 @@ public class Elephant extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-1);
+            move(-2);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(1);
+            move(2);
             facing = "right";
         }
         
@@ -82,6 +82,7 @@ public class Elephant extends Actor
         
         // Animate the elephant
         animateElephant();
+        hitBomb();
         
     }
     
@@ -98,6 +99,18 @@ public class Elephant extends Actor
             world.createStrawberry();
             world.increaseScore();
             elephantSound.play();
+        }
+    }
+    
+    public void hitBomb()
+    {
+        if(isTouching(Bomb.class))
+        {
+            removeTouching(Bomb.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createBomb();
+            world.decreaseScore();
+            
         }
     }
 }
