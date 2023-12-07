@@ -51,6 +51,7 @@ public class TitleScreen extends World
         addObject(label3, getWidth()/2 + 5, getHeight()/2 + 70);
         Label label4 = new Label("or don't eat a strawberry!", 30);
         addObject(label4, getWidth()/2 + 25, getHeight()/2 + 100);
-        
+        Label label5 = new Label("Use \u2191 to reset game", 25);
+        addObject (label5, getWidth()/2, getHeight()/2 + 140);
     }
 }

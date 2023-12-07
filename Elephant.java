@@ -103,7 +103,7 @@ public class Elephant extends Actor
     }
     
     int bombHit = 0;
-
+    GreenfootSound bombSound = new GreenfootSound("Bomb+1.mp3");
     public void hitBomb()
     {
         if(isTouching(Bomb.class))
@@ -112,6 +112,7 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createBomb();
             world.decreaseScore();
+            bombSound.play();
             bombHit++;
             if(bombHit == 5)
             {

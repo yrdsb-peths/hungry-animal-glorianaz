@@ -45,9 +45,19 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        Label resetLabel = new Label("Use \u2191 to restart game", 40);
+        removeObject(bomb);
+        removeObject(strawberry);
+        addObject(gameOverLabel, 300, 150);
+        addObject (resetLabel, getWidth()/2, 200);
         
         gameOverSound.play();
+        
+        if(Greenfoot.isKeyDown("up"))
+        {
+            TitleScreen resetWorld = new TitleScreen();
+            Greenfoot.setWorld(resetWorld);
+        }
     }
     
     /**
@@ -74,18 +84,18 @@ public class MyWorld extends World
     /**
      * Create a new Strawberry at a random location at the top of the world
      */
+    Strawberry strawberry = new Strawberry();
     public void createStrawberry()
     {
-        Strawberry strawberry = new Strawberry();
         strawberry.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600); 
         int y = 0;
         addObject(strawberry, x, y);
     }
     
+    Bomb bomb = new Bomb();
     public void createBomb()
     {
-        Bomb bomb = new Bomb();
         bomb.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
@@ -107,7 +117,19 @@ public class MyWorld extends World
                     createBomb();
                 }
             }
+            
+            checkKeyPress();
+        }
+        
+    }
+    
+     private void checkKeyPress()
+    {
+        if (Greenfoot.isKeyDown("up"))
+        {
+            Greenfoot.setWorld(new TitleScreen());
         }
     }
+    
     
 }
