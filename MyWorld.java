@@ -49,7 +49,7 @@ public class MyWorld extends World
         removeObject(bomb);
         removeObject(strawberry);
         addObject(gameOverLabel, 300, 150);
-        addObject (resetLabel, getWidth()/2, 200);
+        addObject (resetLabel, getWidth()/2, 220);
         
         gameOverSound.play();
         
