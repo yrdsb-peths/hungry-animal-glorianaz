@@ -101,8 +101,11 @@ public class MyWorld extends World
         {
             if(bombTimer.millisElapsed() > 20000)
             {
-                bombTimer.mark();
-                createBomb();
+                if(level % 5 == 0)
+                {
+                    bombTimer.mark();
+                    createBomb();
+                }
             }
         }
     }

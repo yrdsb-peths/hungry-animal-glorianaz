@@ -102,6 +102,8 @@ public class Elephant extends Actor
         }
     }
     
+    int bombHit = 0;
+
     public void hitBomb()
     {
         if(isTouching(Bomb.class))
@@ -110,7 +112,12 @@ public class Elephant extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createBomb();
             world.decreaseScore();
-            
+            bombHit++;
+            if(bombHit == 5)
+            {
+                world.gameOver();
+                world.removeObject(this);
+            }
         }
     }
 }
