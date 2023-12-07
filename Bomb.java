@@ -27,10 +27,6 @@ public class Bomb extends Actor
         {
             world.removeObject(this);
             
-            if(world.score == 0)
-            {
-                world.gameOver();
-            }
             world.createBomb();
         }
         

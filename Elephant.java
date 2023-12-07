@@ -21,6 +21,7 @@ public class Elephant extends Actor
     
     public Elephant()
     {
+        //Array
         for(int i = 0; i < 8; i++)
         {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
@@ -102,6 +103,10 @@ public class Elephant extends Actor
         }
     }
     
+    /* 
+     * When the bomb hits the elephant, it decreases the score and it plays a sound.
+     * When the elephant hits the bomb 5 times, it is game over. 
+     */
     int bombHit = 0;
     GreenfootSound bombSound = new GreenfootSound("Bomb+1.mp3");
     public void hitBomb()

@@ -93,6 +93,9 @@ public class MyWorld extends World
         addObject(strawberry, x, y);
     }
     
+    /* 
+     * Creates a new Bomb at a random location at the top of the world 
+     */
     Bomb bomb = new Bomb();
     public void createBomb()
     {
@@ -102,7 +105,9 @@ public class MyWorld extends World
         addObject(bomb, x, y);
     }
     
-    
+    /* 
+     * Over time, the bomb falls faster and faster
+     */
     SimpleTimer bombTimer = new SimpleTimer();
     boolean gameIsOver = false;
     public void act()
@@ -123,6 +128,7 @@ public class MyWorld extends World
         
     }
     
+    // If user presses key up, game is restarted 
      private void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up"))
